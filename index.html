@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
     <title>WoW Classic Mobile Talent Calculator | Vanilla, TBC, WotLK, Cataclysm</title>
 
     <!-- SEO -->
-    <meta name="description" content="WoW Classic Mobile Talent Calculator for Vanilla, TBC, WotLK and Cataclysm. Plan talents, optimize builds, and improve your gameplay on mobile.">
-    <meta name="keywords" content="wow classic talent calculator, wow mobile calculator, vanilla talents, tbc talents, wotlk talents, cataclysm talents">
+    <meta name="description"
+        content="WoW Classic Mobile Talent Calculator for Vanilla, TBC, WotLK and Cataclysm. Plan talents and optimize your gameplay.">
+    <meta name="keywords"
+        content="wow classic talent calculator, wow mobile calculator, vanilla talents, tbc talents, wotlk talents, cataclysm talents">
     <meta name="author" content="Gergo Halasz">
 
-    <!-- Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Font -->
@@ -22,6 +24,10 @@
             padding: 0;
             box-sizing: border-box;
             font-family: "Inter", sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -42,9 +48,14 @@
             margin-bottom: 60px;
         }
 
+        /* Logo with border */
         header img {
             width: 140px;
             margin-bottom: 20px;
+            border-radius: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            padding: 6px;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         h1 {
@@ -106,10 +117,10 @@
         }
 
         .feature {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 25px;
             border-radius: 14px;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .feature h3 {
@@ -123,17 +134,69 @@
             font-size: 0.95rem;
         }
 
+        /* Screenshots */
+        .screenshots {
+            margin-top: 90px;
+        }
+
+        .screenshots h2 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .screenshot-grid img {
+            width: 100%;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-grid img:hover {
+            transform: scale(1.03);
+        }
+
         /* Footer */
         footer {
             margin-top: 80px;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #94a3b8;
             font-size: 0.9rem;
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
+        /* Scroll Button */
+        .scroll-btn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
             h1 {
                 font-size: 2.2rem;
             }
@@ -141,92 +204,114 @@
             .subtitle {
                 font-size: 1rem;
             }
-        }
 
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-<div class="container">
+    <!-- Scroll Button -->
+    <button class="scroll-btn" onclick="scrollToScreens()">
+        ↓
+    </button>
 
-    <!-- HEADER -->
-    <header>
+    <div class="container">
 
-        <!-- Logo -->
-        <img src="images/wowtc.png" alt="WoW Talent Calculator Logo">
+        <!-- HEADER -->
+        <header>
 
-        <h1>WoW Classic Mobile Talent Calculator</h1>
+            <img src="images/wowtc.png" alt="WoW Talent Calculator Logo">
 
-        <p class="subtitle">
-            Plan and optimize your character talents for
-            <strong>Vanilla, The Burning Crusade, Wrath of the Lich King, and Cataclysm</strong>.
-            The ultimate mobile companion for Classic players.
-        </p>
+            <h1>WoW Classic Mobile Talent Calculator</h1>
 
-        <!-- DOWNLOAD BUTTONS -->
-        <div class="buttons">
+            <p class="subtitle">
+                Plan and optimize your character talents for
+                <strong>Vanilla, The Burning Crusade, Wrath of the Lich King, and Cataclysm</strong>.
+                The ultimate mobile companion for Classic players.
+            </p>
 
-            <!-- iOS -->
-            <a class="btn btn-ios"
-               href="https://apps.apple.com/us/app/wow-talent-calculator/id1593368066"
-               target="_blank">
-                📱 Download on App Store
-            </a>
+            <div class="buttons">
 
-            <!-- Android (Coming Soon) -->
-            <div class="btn btn-android">
-                🤖 Android Version
+                <a class="btn btn-ios" href="https://apps.apple.com/us/app/wow-talent-calculator/id1593368066"
+                    target="_blank">
+                    📱 Download on App Store
+                </a>
+
+                <div class="btn btn-android">
+                    🤖 Android Version
+                </div>
+
             </div>
 
-        </div>
-
-    </header>
+        </header>
 
 
-    <!-- FEATURES -->
-    <section class="features">
+        <!-- FEATURES -->
+        <section class="features">
 
-        <div class="feature">
-            <h3>🔥 All Classic Expansions</h3>
+            <div class="feature">
+                <h3>🔥 All Classic Expansions</h3>
+                <p>Supports Vanilla, TBC, WotLK, and Cataclysm talent trees.</p>
+            </div>
+
+            <div class="feature">
+                <h3>⚔️ Build Optimization</h3>
+                <p>Create, save, and test builds to maximize performance.</p>
+            </div>
+
+            <div class="feature">
+                <h3>📱 Mobile Friendly</h3>
+                <p>Designed for smooth and fast mobile gameplay planning.</p>
+            </div>
+
+            <div class="feature">
+                <h3>🚀 Fast & Lightweight</h3>
+                <p>No clutter, just pure talent calculation.</p>
+            </div>
+
+        </section>
+
+
+        <!-- SCREENSHOTS -->
+        <section class="screenshots" id="screens">
+
+            <h2>App Screenshots</h2>
+
+            <div class="screenshot-grid">
+
+                <img src="images/wowsc1.png" alt="WoW Talent Calculator Screenshot 1">
+
+                <img src="images/wowsc2.png" alt="WoW Talent Calculator Screenshot 2">
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
             <p>
-                Supports Vanilla, TBC, WotLK, and Cataclysm talent trees.
+                © 2026 WoW Classic Mobile Talent Calculator<br>
+                Developed by Gergo Halasz
             </p>
-        </div>
+        </footer>
 
-        <div class="feature">
-            <h3>⚔️ Build Optimization</h3>
-            <p>
-                Create, save, and test builds to maximize your character’s performance.
-            </p>
-        </div>
-
-        <div class="feature">
-            <h3>📱 Mobile Friendly</h3>
-            <p>
-                Designed specifically for smooth and fast mobile gameplay planning.
-            </p>
-        </div>
-
-        <div class="feature">
-            <h3>🚀 Fast & Lightweight</h3>
-            <p>
-                No clutter, just pure talent calculation.
-            </p>
-        </div>
-
-    </section>
+    </div>
 
 
-    <!-- FOOTER -->
-    <footer>
-        <p>
-            © 2026 WoW Classic Mobile Talent Calculator<br>
-            Developed by Gergo Halasz
-        </p>
-    </footer>
-
-</div>
+    <!-- Scroll Script -->
+    <script>
+        function scrollToScreens() {
+            document.getElementById("screens").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    </script>
 
 </body>
+
 </html>
