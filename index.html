@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <title>WoW Classic Mobile Talent Calculator | Vanilla, TBC, WotLK, Cataclysm</title>
 
     <!-- SEO -->
@@ -209,6 +209,35 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .btn-android {
+            background: #064e3b;
+            /* dark green */
+            color: #ffffff;
+            /* light green text */
+            cursor: pointer;
+        }
+
+        .btn-android:hover {
+            background: #047857;
+            /* brighter green on hover */
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-android:active {
+            transform: translateY(0);
+        }
+
+        .btn i {
+            font-size: 1.3rem;
+            margin-right: 12px;
+            /* add more space between icon and text */
+            display: inline-flex;
+            vertical-align: middle;
+
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -238,12 +267,17 @@
 
                 <a class="btn btn-ios" href="https://apps.apple.com/us/app/wow-talent-calculator/id1593368066"
                     target="_blank">
-                    📱 Download on iOS App Store
+
+                    <i class="fa-brands fa-apple"></i>
+                    <span>Download on App Store</span>
                 </a>
 
-                <div class="btn btn-android" href="https://apkpure.com/p/com.chickencowstudios.talentcalculator">
-                    🤖 Android Version
-                </div>
+                <a class="btn btn-android" href="https://apkpure.com/p/com.chickencowstudios.talentcalculator"
+                    target="_blank">
+
+                    <i class="fa-brands fa-android"></i>
+                    <span>Android Version</span>
+                </a>
 
             </div>
 
